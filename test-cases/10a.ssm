@@ -1,0 +1,60 @@
+	LDR MP
+	Bsr main
+	HALT
+main:
+	LDRR MP SP
+	LDC 1
+	LDR MP
+	Bsr fac
+	STR MP
+	AJS -1
+	LDS 4
+	TRAP 0
+	LDC 0
+	AJS -1
+	LDC 2
+	LDR MP
+	Bsr fac
+	STR MP
+	AJS -1
+	LDS 4
+	TRAP 0
+	LDC 0
+	AJS -1
+	LDC 10
+	LDR MP
+	Bsr fac
+	STR MP
+	AJS -1
+	LDS 4
+	TRAP 0
+	LDC 0
+	AJS -1
+	LDRR SP MP
+	RET
+fac:
+	LDRR MP SP
+	LDL -2
+	LDC 1
+	EQ
+	BRF 10
+	LDC 1
+	STL 1
+	LDRR SP MP
+	RET
+	BRA 24
+	LDL -2
+	LDL -2
+	LDC 1
+	SUB
+	LDR MP
+	Bsr fac
+	STR MP
+	AJS -1
+	LDS 4
+	MUL
+	STL 1
+	LDRR SP MP
+	RET
+	LDRR SP MP
+	RET

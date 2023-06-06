@@ -1,0 +1,50 @@
+	NOP
+	LDR MP
+	Bsr main
+	HALT
+main:
+	LDRR MP SP
+	LDC 0
+	LDC 37
+	LDS 0
+	LDLA 1
+	STA 0
+	AJS -1
+	LDC 0
+	LDC 35
+	LDS 0
+	LDLA 2
+	STA 0
+	AJS -1
+	LDL 2
+	TRAP 0
+	LDC 0
+	AJS -1
+	LDL 1
+	TRAP 0
+	LDC 0
+	AJS -1
+	LDC 0
+	LDC 0
+	LDS 0
+	LDLA 2
+	STA 0
+	AJS -1
+	BRA 21
+	LDL 2
+	TRAP 0
+	LDC 0
+	AJS -1
+	LDL 2
+	LDC 1
+	ADD
+	LDS 0
+	LDLA 2
+	STA 0
+	AJS -1
+	LDL 2
+	LDC 5
+	LT
+	BRT -28
+	LDRR SP MP
+	RET
